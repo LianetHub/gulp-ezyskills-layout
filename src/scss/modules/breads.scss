@@ -1,0 +1,43 @@
+.breadcrumbs {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	color: #666a71;
+	// .breadcrumbs__item
+	&__item {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-size: rem(10);
+		@media (min-width: $md5) {
+			font-size: rem(14);
+		}
+		@media (min-width: $md3) {
+			font-size: rem(18);
+		}
+		&:not(:last-child) {
+			&::before {
+				order: 1;
+				width: 1.125rem;
+				height: 1.125rem;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				@extend %ic, .icon-chevron;
+			}
+		}
+	}
+	// .breadcrumbs__link
+	&__link {
+		transition: color 0.3s ease;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $accent;
+			}
+		}
+		&.active {
+			color: $accent;
+		}
+	}
+}
