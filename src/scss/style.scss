@@ -11,8 +11,8 @@
 // ======================================ШРИФТЫ===============================================
 
 // Шрифт по умолчанию
-$fontfamily: "Gilroy";
-$font-manrope: "Manrope";
+$fontfamily: "Poppins";
+$font-inter: "Inter";
 // Шрифт по умолчанию
 
 $md1: 1399.98px;
@@ -54,7 +54,7 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 // ОБЩИЕ ПАРАМЕТРЫ
 
 @import "ui";
-@import "forms";
+// @import "forms";
 @import "common";
 @import "header";
 @import "footer";
@@ -62,12 +62,3 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 //=======================================
 
 // СТИЛИ СТРАНИЦ
-
-@import "pages/home";
-@import "pages/about";
-@import "pages/promotions";
-@import "pages/contacts";
-@import "pages/reviews";
-@import "pages/works";
-@import "pages/doctor";
-@import "pages/braces";

@@ -11,9 +11,7 @@ export const path = {
 		css: `${buildFolder}/css/`,
 		cssLibs: `${buildFolder}/css/libs/`,
 		normalize: `${buildFolder}/css/`,
-		js: `${buildFolder}/js/`,
-		jsLibs: `${buildFolder}/js/libs/`,
-		jsChunks: `${buildFolder}/js/`,
+
 		images: `${buildFolder}/img/`,
 		favicon: `${buildFolder}/`,
 		fonts: `${buildFolder}/fonts/`,
@@ -27,9 +25,7 @@ export const path = {
 		cssLibs: `${srcFolder}/scss/libs/**/*.*`,
 		normalize: `${srcFolder}/scss/reset.scss`,
 		favicon: `${srcFolder}/fav/**/*`,
-		js: `${srcFolder}/js/app.js`,
-		jsLibs: `${srcFolder}/js/libs/**/*.*`,
-		jsChunks: `${srcFolder}/js/chunks/**/*.*`,
+
 		images: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp}`,
 		svg: `${srcFolder}/img/**/*.svg`,
 		json: `${srcFolder}/json/*.*`,
@@ -40,7 +36,7 @@ export const path = {
 		html: `${srcFolder}/**/*.html`,
 		scss: `${srcFolder}/scss/**/*.scss`,
 		normalize: `${srcFolder}/scss/reset.scss`,
-		js: `${srcFolder}/js/**/*.js`,
+
 		images: `${srcFolder}/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}`,
 		json: `${srcFolder}/json/*.*`,
 		fonts: `${srcFolder}/fonts/*.{ttf,otf,woff,woff2}`,
