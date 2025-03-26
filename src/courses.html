@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    @@include('html/_head.html', {
+    'title': 'Courses List'
+    })
+    <body>
+        <div class="wrapper">
+            @@include('html/_header.html', {
+            "active": 3
+            })
+            <main class="page">
+                <section class="courses">
+                    <div class="courses__header">
+                        <div class="container">
+                            <h2 class="courses__title title-md">Courses <span class="color-accent">List</span></h2>
+                            <form action="#" class="courses__filters">
+                                <div class="courses__search">
+                                    <input type="text" name="search" class="courses__search-input" placeholder="Search The Course Here">
+                                    <button type="button" class="courses__search-btn">
+                                        <img src="@img/icons/search.svg" alt="icon">
+                                    </button>
+                                </div>
+                                <div class="courses__filters-items">
+                                    <label class="courses__filters-item">
+                                        <input type="radio" name="filter" value="all" class="courses__filters-input hidden" hidden>
+                                        <span class="courses__filters-text">All</span>
+                                    </label>
+                                    <label class="courses__filters-item">
+                                        <input type="radio" name="filter" value="opened" checked class="courses__filters-input hidden" hidden>
+                                        <span class="courses__filters-text">Opened</span>
+                                    </label>
+                                    <label class="courses__filters-item">
+                                        <input type="radio" name="filter" value="coming_soon" class="courses__filters-input hidden" hidden>
+                                        <span class="courses__filters-text">Coming Soon</span>
+                                    </label>
+                                    <label class="courses__filters-item">
+                                        <input type="radio" name="filter" value="archived" class="courses__filters-input hidden" hidden>
+                                        <span class="courses__filters-text">Archived</span>
+                                    </label>
+                                </div>
+                                <label class="courses__filters-sort">
+                                    <span class="courses__filters-caption">Sort by:</span>
+                                    <select name="sort" class="courses__filters-select">
+                                        <option value="popular" selected>Popular Class</option>
+                                        <option value="newest">Newest</option>
+                                        <option value="oldest">Oldest</option>
+                                        <option value="highest_rated">Highest Rated</option>
+                                        <option value="lowest_rated">Lowest Rated</option>
+                                        <option value="most_enrolled">Most Enrolled</option>
+                                        <option value="least_enrolled">Least Enrolled</option>
+                                        <option value="price_asc">Price: Low to High</option>
+                                        <option value="price_desc">Price: High to Low</option>
+                                    </select>
+                                    <span class="courses__filters-btn">
+                                        <img src="@img/icons/triangle.svg" alt="icon">
+                                    </span>
+                                </label>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="courses__body">
+                        <div class="container">
+                            <ul class="courses__list">
+                                @@loop('./html/templates/_course.html', './html/json/courses.json')
+                            </ul>
+                            <div class="courses__pagination pagination">
+                                <a href="" class="pagination__item active">1</a>
+                                <a href="" class="pagination__item">2</a>
+                                <a href="" class="pagination__item">3</a>
+                                <a href="" class="pagination__item">4</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            @@include('html/_footer.html', {})
+        </div>
+    </body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    @@include('html/_head.html', {
+    'title': 'Contact Our Team'
+    })
+    <body>
+        <div class="wrapper">
+            @@include('html/_header.html', {
+            "active": 5,
+            "className": "header_white"
+            })
+            <main class="page">
+                <section class="contacts">
+                    <div class="contacts__header">
+                        <h1 class="contacts__title title-md">Contact Our Team</h1>
+                    </div>
+                    <div class="contacts__body">
+                        <div class="container">
+                            <div class="contacts__wrapper">
+                                <form action="#" class="contacts__form">
+                                    <div class="contacts__form-grid">
+                                        <div class="form__field">
+                                            <label for="name" class="form__label">Your name*</label>
+                                            <input type="text" id="name" name="name" class="form__control" required placeholder="Enter your name">
+                                        </div>
+                                        <div class="form__field">
+                                            <label for="email" class="form__label">Contact email *</label>
+                                            <input type="email" id="email" name="email" class="form__control" required placeholder="you@example.com">
+                                        </div>
+                                        <div class="form__field">
+                                            <label for="phone" class="form__label">Phone Number*</label>
+                                            <input type="phone" id="phone" name="phone" class="form__control" required placeholder="Company name">
+                                        </div>
+                                        <div class="form__field">
+                                            <div class="form__label">Issue Related to *</div>
+                                            <div class="form__select">
+                                                <div class="form__select-btn active">
+                                                    <span class="form__select-value">
+                                                        Course Structure
+                                                    </span>
+                                                    <span class="form__select-icon">
+                                                        <img src="@img/icons/chevron.svg" alt="icon">
+                                                    </span>
+                                                </div>
+                                                <ul class="form__select-list active">
+                                                    <li class="form__select-item" aria-selected="true">
+                                                        Course Structure
+                                                    </li>
+                                                    <li class="form__select-item">
+                                                        Payment Failure
+                                                    </li>
+                                                    <li class="form__select-item">
+                                                        Other
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="form__field form__field_lg">
+                                            <label for="message" class="form__label">Your message*</label>
+                                            <textarea name="message" id="message" class="form__control" placeholder="Type your message…."></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="contacts__form-hint">By submitting this form you agree to our terms and conditions and our Privacy Policy which explains how we may collect, use and disclose your personal information including to third parties.</div>
+                                    <button type="submit" class="contacts__form-btn btn btn-secondary">Send</button>
+                                </form>
+                            </div>
+                            <div class="contacts__bottom">
+                                <div class="contacts__bottom-block">
+                                    <div class="contacts__bottom-icon">
+                                        <img src="@img/email.png" alt="icon">
+                                    </div>
+                                    <div class="contacts__bottom-caption">Email us</div>
+                                    <p class="contacts__bottom-subtitle">Email us for general queries, including marketing and partnership opportunities.</p>
+                                    <a href="mailto:hello@ezyskills.com" class="contacts__bottom-btn">hello@ezyskills.com</a>
+                                </div>
+                                <div class="contacts__bottom-block">
+                                    <div class="contacts__bottom-icon">
+                                        <img src="@img/operator.png" alt="icon">
+                                    </div>
+                                    <div class="contacts__bottom-caption">Call us</div>
+                                    <p class="contacts__bottom-subtitle">Call us to speak to a member of our team. We are always happy to help.</p>
+                                    <a href="tel:+918888899999" class="contacts__bottom-btn">+91 88888 99999</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            @@include('html/_footer.html', {})
+        </div>
+    </body>
+</html>

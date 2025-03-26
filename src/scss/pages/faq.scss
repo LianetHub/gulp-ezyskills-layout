@@ -1,0 +1,175 @@
+.faq {
+	padding: 0 0 10.6rem 0;
+	// .faq__header
+	&__header {
+		padding-top: $header;
+		padding-bottom: 34rem;
+		background: #f98149;
+		position: relative;
+		z-index: 1;
+		&::before {
+			content: "";
+			position: absolute;
+			bottom: rem(-10);
+			left: 0;
+			right: 0;
+			width: 100%;
+			height: 0;
+			padding-bottom: 12.760417%;
+			background: url("data:image/svg+xml,%3Csvg width='2880' height='368' viewBox='0 0 2880 368' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath id='Wave' fill-rule='evenodd' clip-rule='evenodd' d='M2880 367.5H0V0C480 112 960 168 1440 168C1920 168 2400 112 2880 0V367.5Z' fill='white'/%3E%3C/svg%3E%0A")
+				center bottom / 100vw auto no-repeat;
+			z-index: -1;
+		}
+	}
+	// .faq__title
+	&__title {
+		padding-top: 2.5rem;
+		text-align: center;
+	}
+	// .faq__body
+	&__body {
+	}
+	// .faq__wrapper
+	&__wrapper {
+		position: relative;
+		z-index: 2;
+		margin-top: -29rem;
+		&::before {
+			content: "";
+			position: absolute;
+			bottom: rem(-113);
+			right: rem(-113);
+			width: rem(226);
+			height: rem(226);
+			background: url("@img/decor/circle-md.svg") center / contain no-repeat;
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			right: calc(100% - 2.25rem);
+			width: 6.63844rem;
+			height: 22rem;
+			z-index: -1;
+			background: url("@img/decor/dotts-rect-orange-vertical-lg.svg") center / contain no-repeat;
+		}
+	}
+	// .faq__list
+	&__list {
+		padding: 1.5rem 1rem;
+		@media (min-width: $md5) {
+			padding: 3rem 2.5rem;
+		}
+		@media (min-width: $md2) {
+			padding: 6rem 5.62rem;
+		}
+		position: relative;
+		z-index: 3;
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: #fff;
+			box-shadow: rem(10) rem(24) rem(54) 0 rgba(0, 0, 0, 0.04);
+			border-radius: 0.75rem;
+			@media (min-width: $md5) {
+				border-radius: 1.875rem;
+			}
+			z-index: -1;
+		}
+	}
+	// .faq__item
+	&__item {
+		&:not(:last-child) {
+			border-bottom: rem(1) solid #ddd;
+			margin-bottom: 2.37rem;
+			padding-bottom: 1rem;
+			@media (min-width: $md2) {
+				margin-bottom: 4.37rem;
+				padding-bottom: 1.5rem;
+			}
+		}
+	}
+	// .faq__question
+	&__question {
+		position: relative;
+		z-index: 3;
+		font-size: 1.25rem;
+		@media (min-width: $md5) {
+			font-size: 1.5rem;
+		}
+		@media (min-width: $md2) {
+			font-size: 1.625rem;
+		}
+		font-weight: 600;
+		letter-spacing: 0.03125rem;
+		padding-left: 2.5rem;
+		@media (min-width: $md5) {
+			padding-left: 5rem;
+		}
+		cursor: pointer;
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			width: 1.75rem;
+			height: 1.75rem;
+			left: 0;
+			@media (min-width: $md5) {
+				left: 1rem;
+				width: 2.54525rem;
+				height: 2.54525rem;
+			}
+			background: url("@img/icons/plus.svg") center / contain no-repeat;
+			transition: transform 0.3s ease;
+		}
+		transition: color 0.3s ease;
+		@media (any-hover: hover) {
+			&:hover {
+				color: #f98149;
+			}
+		}
+		&.active {
+			color: #f98149;
+			&::before {
+				transform: rotate(360deg);
+				background: url("@img/icons/minus.svg") center / contain no-repeat;
+			}
+		}
+	}
+	// .faq__answer
+	&__answer {
+		margin-top: em(2.25, 1.375);
+		color: rgba($color: #000, $alpha: 0.6);
+		line-height: em(1.75, 1.375);
+		letter-spacing: em(0.03125, 1.375);
+		padding: 0.5rem 1.7rem;
+		margin-bottom: 1rem;
+		display: none;
+		max-width: 50rem;
+		position: relative;
+
+		@media (min-width: $md5) {
+			font-size: 1.275rem;
+			margin-left: 5rem;
+		}
+		@media (min-width: $md2) {
+			font-size: 1.375rem;
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: rem(3);
+			height: 100%;
+			background: #ff8b36;
+		}
+		&.active {
+			display: block;
+		}
+	}
+}

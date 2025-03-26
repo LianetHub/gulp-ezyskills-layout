@@ -15,6 +15,8 @@ $fontfamily: "Poppins";
 $font-inter: "Inter";
 // Шрифт по умолчанию
 
+$md-xxl: 1759.98px;
+$md0: 1599.98px;
 $md1: 1399.98px;
 $md2: 1199.98px;
 $md3: 991.98px;
@@ -26,21 +28,46 @@ $md6: 389.98px;
 
 $minWidth: 375; // Минимальная ширина страницы
 $maxWidth: 1920; // Ширина макета
-$maxWidthContainer: rem(1316); // Максимальная ширина ограничивающего контейнера
+$maxWidthContainer: rem(1700); // Максимальная ширина ограничивающего контейнера
 $containerPadding: 30;
 
 // ЦВЕТА
 
 $white: #fff;
 $bg-color: #edfcfd;
-$text: #171717;
+$text: #003f7d;
 $grey: #666a71;
 
-$accent: #3fc1c9;
+$accent: #f98149;
 $blue: #106fae;
 $red: #ce0000;
 
-$header: var(--header-height, 11.375rem);
+$header: var(--header-height, #{rem(262)});
+
+:root {
+	--header-height: #{rem(155)};
+	@media (min-width: $md5) {
+		--header-height: #{rem(187)};
+	}
+	@media (min-width: $md4) {
+		--header-height: #{rem(150)};
+	}
+	@media (min-width: $md3) {
+		--header-height: #{rem(175)};
+	}
+	@media (min-width: $md2) {
+		--header-height: #{rem(156)};
+	}
+	@media (min-width: $md1) {
+		--header-height: #{rem(175)};
+	}
+	@media (min-width: $md0) {
+		--header-height: #{rem(230)};
+	}
+	@media (min-width: $md-xxl) {
+		--header-height: #{rem(262)};
+	}
+}
 
 // Z-Index
 
@@ -54,7 +81,7 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 // ОБЩИЕ ПАРАМЕТРЫ
 
 @import "ui";
-// @import "forms";
+@import "forms";
 @import "common";
 @import "header";
 @import "footer";
@@ -62,3 +89,11 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 //=======================================
 
 // СТИЛИ СТРАНИЦ
+
+@import "pages/login";
+@import "pages/home";
+@import "pages/choise";
+@import "pages/courses";
+@import "pages/faq";
+@import "pages/contacts";
+@import "pages/price";

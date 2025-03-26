@@ -1,66 +1,40 @@
 .form {
-	// .form__row
-	&__row {
-		display: grid;
-		gap: 1.5rem;
-		@media (min-width: $md5) {
-			gap: rem(30);
-			grid-template-columns: repeat(2, 1fr);
-			.btn {
-				grid-column: span 2;
-			}
-		}
-		@media (min-width: $md2) {
-			display: flex;
-			align-items: center;
-		}
-	}
-	// .form__field
-	&__field {
-		flex: 1 1 auto;
-	}
-	// .form__separator
-	&__separator {
-		display: none;
-		@media (min-width: $md2) {
-			display: block;
-			width: 0.0625rem;
-			height: 3.5625rem;
-			flex-shrink: 0;
-			background: #c9c9c9;
-		}
-	}
-	// .form__label
-	&__label {
-		color: #106fae;
-		font-weight: 500;
-		margin-bottom: 0.5rem;
-		display: inline-block;
-		@media (min-width: $md5) {
-			font-size: 1.625rem;
-		}
-	}
 	// .form__title
 	&__title {
+		text-align: center;
+		margin-bottom: em(2.45, 2.8125);
 	}
-	// .form__subtitle
-	&__subtitle {
-		margin-top: 1.5rem;
-		color: #666a71;
-		font-size: 0.875rem;
-		@media (min-width: $md5) {
-			font-size: 1rem;
-		}
-		@media (min-width: $md3) {
-			font-size: 1.375rem;
+	// .form__caption
+	&__caption {
+		font-weight: 600;
+		margin-bottom: 1em;
+		font-size: 1.25rem;
+		@media (min-width: $md4) {
+			font-size: 1.875rem;
 		}
 	}
-	&__fields {
+	// .form__row
+	&__row {
 		display: flex;
-		flex-direction: column;
-		gap: 1rem;
-		&:not(:first-child) {
-			margin-top: 1.91rem;
+	}
+	// .form__submit
+	&__submit {
+		flex-shrink: 0;
+		padding: 1.25rem 1.5rem;
+		@media (min-width: $md4) {
+			padding: 1.875rem 2rem;
+		}
+		background: #f98149;
+		color: #fff;
+		border-radius: rem(8) rem(8) 0 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		&:hover {
+			background-color: darken($color: #f98149, $amount: 10);
+		}
+		&:active {
+			background-color: darken($color: #f98149, $amount: 15);
 		}
 	}
 	// .form__control
@@ -68,33 +42,20 @@
 		text-overflow: ellipsis;
 		transition: border-color 0.3s ease 0s, color 0.3s ease 0s;
 		width: 100%;
-		border-radius: em(4.25, 1.875);
-		padding: em(0.88, 1.875) em(1.75, 1.875);
-		border: rem(1) solid $blue;
-		color: #3fc1c9;
-		@media (min-width: $md5) {
-			font-size: 1.25rem;
+		padding: em(0.5, 1.27669) 0;
+		border-radius: 0;
+		border-bottom: rem(1) solid #b1b1b1;
+		background: transparent;
+		color: $text;
+		@media (min-width: $md4) {
+			font-size: 1.27669rem;
 		}
-		@media (min-width: $md3) {
-			font-size: 1.875rem;
-		}
-		&.form__control-grey {
-			font-size: 1rem;
-			@media (min-width: $md5) {
-				font-size: 1.125rem;
-			}
-			border-radius: em(0.375, 1.125);
-			background: #f4f4f4;
-			border-color: #f4f4f4;
-			padding: em(1, 1.125) em(1.12, 1.125);
-			&::placeholder {
-				color: #c9c9c9;
-				opacity: 1;
-			}
+		& + .form__control {
+			margin-top: 0.5rem;
 		}
 		&::placeholder {
-			opacity: 0.3;
-			color: currentColor;
+			opacity: 1;
+			color: #b1b1b1;
 		}
 		&:hover,
 		&:focus {
@@ -109,50 +70,42 @@
 			background: #fff1ed;
 		}
 		&:is(textarea) {
-			height: rem(137);
+			height: 12.4375rem;
 			resize: none;
 		}
 	}
-
 	// .form__checkbox
 	&__checkbox {
-		margin-top: 1.35rem;
 		display: inline-block;
-
 		width: fit-content;
 	}
 	// .form__checkbox-input
 	&__checkbox-input {
-		// &:checked {
-		// 	& + .form__checkbox-text {
-		// 		&::before {
-		// 			@extend %ic, .icon-check;
-		// 		}
-		// 	}
-		// }
-		// &.error {
-		// 	& + .form__checkbox-text {
-		// 		&::before {
-		// 			border: rem(1) solid red;
-		// 		}
-		// 	}
-		// }
+		&:checked {
+			& + .form__checkbox-field {
+				&::before {
+					background-color: #b1b1b1;
+					background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='m9.55 18l-5.7-5.7l1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z'/%3E%3C/svg%3E");
+				}
+			}
+		}
+		&.error {
+			& + .form__checkbox-text {
+				&::before {
+					border: rem(1) solid red;
+				}
+			}
+		}
 	}
-
-	// .form__checkbox-text
-	&__checkbox-text {
+	// .form__checkbox-field
+	&__checkbox-field {
 		position: relative;
 		display: block;
 		width: fit-content;
-		font-size: 0.875rem;
-		@media (min-width: $md5) {
-			font-size: 1rem;
-		}
-		@media (min-width: $md3) {
-			font-size: 1.125rem;
-		}
+		color: #b1b1b1;
+		font-size: 0.90169rem;
 		line-height: 100%;
-		padding: 0 0 0 1.5em;
+		padding: 0 0 0 2em;
 		cursor: pointer;
 		user-select: none;
 		&::before {
@@ -164,11 +117,14 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			border: rem(1) solid $text;
-			width: em(20, 18);
-			height: em(20, 18);
-			border-radius: em(0.3125, 1.125);
-			color: $accent;
+			border: rem(2) solid #b1b1b1;
+			width: 24px;
+			height: 24px;
+			background-repeat: no-repeat;
+			background-position: center;
+			width: 1.25rem;
+			height: 1.25rem;
+			border-radius: 0.25rem;
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -179,6 +135,209 @@
 				&:hover {
 					text-decoration: underline;
 				}
+			}
+		}
+	}
+	// .form__btn
+	&__btn {
+		align-self: center;
+	}
+	// .form__desc
+	&__desc {
+		color: #b1b1b1;
+		text-align: center;
+		font-size: 0.77669rem;
+		& a {
+			color: #787878;
+			transition: color 0.3s ease;
+			@media (any-hover: hover) {
+				&:hover {
+					color: $accent;
+				}
+			}
+		}
+	}
+	// .form__desc-link
+	&__desc-link {
+	}
+	// .form__separator
+	&__separator {
+		color: #b1b1b1;
+		text-align: center;
+		font-size: 0.83919rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: rem(10);
+		&::before,
+		&::after {
+			content: "";
+			height: rem(2);
+			background: currentColor;
+			flex: 0 1 7.59344rem;
+		}
+	}
+	// .form__socials
+	&__socials {
+		margin-top: 0.35rem;
+		display: flex;
+		gap: 0.87rem;
+		flex-direction: column;
+		@media (min-width: $md5) {
+			flex-direction: row;
+		}
+		&.form__socials_column {
+			flex-direction: column;
+			.form__social {
+				flex: 0 1 auto;
+				justify-content: flex-start;
+				gap: rem(12);
+				padding-left: rem(20);
+				@media (min-width: $md5) {
+					padding-left: rem(80);
+				}
+			}
+		}
+	}
+	// .form__social
+	&__social {
+		flex: 0 0 calc(33.333% - rem(10));
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.38rem;
+		border-radius: 0.5rem;
+		padding: 0.6rem;
+		font-size: 1.15169rem;
+		transition: background-color 0.3s ease;
+		&.google-btn {
+			background: #f3f3f3;
+			color: #8a8a8a;
+			@media (any-hover: hover) {
+				&:hover {
+					background-color: darken($color: #f3f3f3, $amount: 10);
+				}
+			}
+		}
+		&.facebook-btn {
+			background: #3575dc;
+			color: #fff;
+			@media (any-hover: hover) {
+				&:hover {
+					background-color: darken($color: #3575dc, $amount: 10);
+				}
+			}
+		}
+		&.iphone-btn {
+			background: #404040;
+			color: #fff;
+			@media (any-hover: hover) {
+				&:hover {
+					background-color: darken($color: #404040, $amount: 10);
+				}
+			}
+		}
+	}
+	// .form__privacy
+	&__privacy {
+		margin-top: 1rem;
+		text-align: center;
+		max-width: 16.75rem;
+		margin-left: auto;
+		margin-right: auto;
+		color: #b1b1b1;
+		text-align: center;
+		font-size: 0.77669rem;
+		line-height: 138.023%;
+		& a {
+			color: #ff8b36;
+			@media (any-hover: hover) {
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+	// .form__field
+	&__field {
+		display: flex;
+		flex-direction: column;
+		.form__control {
+			border-radius: 0.5rem;
+			border: rem(1) solid #c3cad9;
+			background: #fff;
+			font-size: 1.25rem;
+			padding: 1.56rem 1.81rem;
+			&:focus {
+				border-color: $accent;
+			}
+		}
+	}
+	// .form__label
+	&__label {
+		color: #003f7d;
+		font-size: 1.4375rem;
+		font-weight: 600;
+		margin-bottom: 1.06rem;
+	}
+	// .form__select
+	&__select {
+		position: relative;
+	}
+	// .form__select-btn
+	&__select-btn {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		font-size: 1.25rem;
+		padding: 1.56rem 1.81rem;
+		border-radius: 0.5rem;
+		border: 1px solid #c3cad9;
+		background: #fff;
+		cursor: pointer;
+		&.active {
+			.form__select-icon {
+				transform: none;
+			}
+		}
+	}
+	// .form__select-value
+	&__select-value {
+	}
+	// .form__select-icon
+	&__select-icon {
+		transition: transform 0.3s ease;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transform: rotate(180deg);
+	}
+	// .form__select-list
+	&__select-list {
+		position: absolute;
+		top: calc(100% + 0.37rem);
+		border-radius: 0.5rem;
+		border: 1px solid #c3cad9;
+		background: #fff;
+		width: 100%;
+	}
+	// .form__select-item
+	&__select-item {
+		color: #000;
+		font-size: 1.25rem;
+		font-weight: 500;
+		padding: 1rem 1.56rem;
+		transition: background-color 0.3s ease, color 0.3s ease;
+		cursor: pointer;
+		&[aria-selected="true"] {
+			background: #c4c4c4;
+			color: #183b56;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				background: #c4c4c4;
+				color: #183b56;
 			}
 		}
 	}
@@ -193,74 +352,104 @@
 	text-align: center;
 	user-select: none;
 	transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-	border-radius: em(2.6875, 1.375);
-	font-size: 1rem;
-	padding: em(1, 1) em(2, 1.375);
-	@media (min-width: $md4) {
-		padding: em(1, 1.375) em(2, 1.375);
+	text-align: center;
+	font-weight: 600;
+	letter-spacing: em(0.03125, 1.25);
+	border-radius: em(0.5, 1.125);
+	padding: em(0.94, 1.25);
+	min-width: em(11.4375, 1.125);
+	font-size: rem(14);
+	@media (min-width: $md3) {
+		font-size: 1rem;
+	}
+	@media (min-width: $md1) {
+		min-height: rem(60);
 		font-size: 1.125rem;
 	}
-	@media (min-width: $md3) {
-		font-size: 1.375rem;
-	}
-	&::before {
-		order: 1;
-		font-size: 0.65em;
-	}
-	&:focus-visible {
-		box-shadow: 0 0 rem(1) rem(1) $text;
-	}
 	&.btn-primary {
+		border: rem(2) solid $accent;
 		background: $accent;
 		color: $white;
 		&:hover {
 			background: darken($color: $accent, $amount: 10);
+			border-color: darken($color: $accent, $amount: 10);
 		}
 		&:active {
 			background: darken($color: $accent, $amount: 15);
 		}
 	}
 	&.btn-primary-outline {
-		border: rem(1) solid #3fc1c9;
-		color: #3fc1c9;
+		border: rem(2) solid $accent;
+		color: $accent;
 		&:hover {
-			background-color: #3fc1c9;
+			background-color: $accent;
 			color: #fff;
 		}
 		&:active {
+			border-color: darken($color: $accent, $amount: 10);
 			background: darken($color: $accent, $amount: 10);
 			color: #fff;
 		}
 	}
-	&.btn-white {
-		color: #3fc1c9;
-		background: #fff;
+	&.btn-secondary {
+		border: rem(2) solid $text;
+		background: $text;
+		color: $white;
 		&:hover {
-			background-color: darken($color: #fff, $amount: 10);
+			background: darken($color: $text, $amount: 10);
 		}
 		&:active {
-			background-color: darken($color: #fff, $amount: 15);
+			background: darken($color: $text, $amount: 15);
+		}
+	}
+	&.btn-secondary-outline {
+		border: rem(2) solid $text;
+		background: $white;
+		color: $text;
+		&:hover {
+			background: $text;
+			color: $white;
+		}
+		&:active {
+			background: darken($color: $text, $amount: 10);
+			border-color: darken($color: $text, $amount: 10);
+			color: $white;
+		}
+	}
+	&.btn-white {
+		border: rem(2) solid $white;
+		background: $white;
+		color: #2e343d;
+		&:hover {
+			background: darken($color: $white, $amount: 10);
+			border-color: darken($color: $white, $amount: 10);
+		}
+		&:active {
+			background: darken($color: $white, $amount: 15);
+			border-color: darken($color: $white, $amount: 15);
+		}
+	}
+	&.btn-white-outline {
+		border: rem(2) solid $white;
+
+		color: $white;
+		&:hover {
+			background: $white;
+			color: #2e343d;
+		}
+		&:active {
+			background: darken($color: $white, $amount: 10);
+			border-color: darken($color: $white, $amount: 10);
+			color: #2e343d;
 		}
 	}
 	&.btn-sm {
-		padding: 0.75rem 1.25rem;
-		font-size: 0.875rem;
-		@media (min-width: $md5) {
-			font-size: 1rem;
-		}
-		@media (min-width: $md2) {
-			font-size: 1.25rem;
-		}
+		min-height: rem(40);
+		font-size: 1.15169rem;
+		min-width: em(10.9375, 1.15169);
+		padding: em(0.25, 1.15169) em(0.5, 1.15169);
 	}
-	&.btn-xl {
-		font-size: rem(16);
-		@media (min-width: $md4) {
-			font-size: rem(24);
-		}
-		@media (min-width: $md2) {
-			font-size: rem(30);
-		}
-	}
+
 	&.btn-fullwidth {
 		width: 100%;
 		padding-inline: 1rem;

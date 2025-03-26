@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    @@include('html/_head.html', {
+    'title': 'Create Account'
+    })
+    <body>
+        <div class="wrapper">
+            @@include('html/_header.html', {
+            "active": 0
+            })
+            <main class="page">
+                <section class="login">
+                    <div class="container">
+                        <div class="login__body">
+                            <form action="#" class="login__form form">
+                                <h1 class="form__title title">Create <span class="color-accent">Account</span></h1>
+                                <input type="email" name="email" class="form__control" placeholder="Email Address">
+                                <input type="password" name="password" class="form__control" placeholder="Password">
+                                <input type="password" name="password-repeat" class="form__control" placeholder="Password">
+                                <label class="form__checkbox">
+                                    <input type="checkbox" name="remember" class="form__checkbox-input hidden" hidden>
+                                    <span class="form__checkbox-field">Remember Me</span>
+                                </label>
+                                <button type="submit" class="form__btn btn btn-sm btn-secondary">Create Account</button>
+                                <div class="form__desc">
+                                    Already Created? <a href="" class="form__desc-link">Login Here</a>
+                                </div>
+                                <span class="form__separator">or</span>
+                                <div class="form__socials">
+                                    <a href="" class="form__social google-btn">
+                                        <img src="@img/icons/google.png" alt="google logo">
+                                        Sign In
+                                    </a>
+                                    <a href="" class="form__social facebook-btn">
+                                        <img src="@img/icons/facebook-square.svg" alt="facebook logo">
+                                        Sign In
+                                    </a>
+                                    <a href="" class="form__social iphone-btn">
+                                        <img src="@img/icons/apple.svg" alt="apple logo">
+                                        Sign In
+                                    </a>
+                                </div>
+                                <div class="form__privacy">
+                                    By continuing, you agree to the <a href="">Terms of Service</a> and <a href="">Privacy Policy</a>
+                                </div>
+                            </form>
+                            <div class="login__picture">
+                                <img src="@img/login.svg" alt="picture">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            @@include('html/_footer.html', {})
+        </div>
+    </body>
+</html>

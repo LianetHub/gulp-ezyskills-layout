@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    @@include('html/_head.html', {
+    'title': 'Choose The Course'
+    })
+    <body>
+        <div class="wrapper">
+            @@include('html/_header.html', {
+            "active": 2
+            })
+            <main class="page">
+                <section class="choise">
+                    <div class="container">
+                        <h1 class="choise__title title-lg">Choose The <span class="color-accent">Course</span></h1>
+                        <div class="choise__body">
+                            <div class="choise__main">
+                                <div class="choise__caption">Ok, Let me help you</div>
+                                <div class="choise__btns">
+                                    <a href="" class="choise__btn btn btn-primary">Discover Course</a>
+                                    <a href="" class="choise__btn btn btn-secondary-outline">Suggest Course</a>
+                                </div>
+                            </div>
+                            <div class="choise__picture">
+                                <img src="@img/choose-the-course.svg" alt="picture">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            @@include('html/_footer.html', {})
+        </div>
+    </body>
+</html>

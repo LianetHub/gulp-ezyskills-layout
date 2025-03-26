@@ -1,21 +1,26 @@
-<header class="header">
-    <div class="header__container">
-        <a href="/" class="header__logo">
-            <img src="@img/logo.png" alt="Logotype">
-        </a>
-        <nav aria-label="main menu" class="header__menu menu">
-            <ul class="menu__list">
-                <li class="menu__item"><a href="" class="menu__link">Home</a></li>
-                <li class="menu__item"><a href="" class="menu__link">Course Selector</a></li>
-                <li class="menu__item"><a href="" class="menu__link">Courses</a></li>
-                <li class="menu__item"><a href="" class="menu__link">FAQ</a></li>
-                <li class="menu__item"><a href="" class="menu__link">Contact</a></li>
-                <li class="menu__item"><a href="" class="menu__link">About US</a></li>
-            </ul>
-        </nav>
-        <div class="header__actions">
-            <a href="" class="header__action btn btn-primary-outline">Log In</a>
-            <a href="" class="header__action btn btn-primary">Create Account</a>
+<header class="header@@if(typeof className !== 'undefined'){ @@className}">
+    <div class="container">
+        <div class="header__body">
+            <a href="/" class="header__logo">
+                <picture>
+                    <source media="(min-width: 575.98px)" srcset="@img/logo.png">
+                    <img src="@img/logo-mobile.png" alt="Logotype">
+                </picture>
+            </a>
+            <nav aria-label="main menu" class="header__menu menu">
+                <ul class="menu__list">
+                    <li class="menu__item"><a href="/" class="menu__link@@if(typeof active !== 'undefinded' && active == 1){ active}">Home</a></li>
+                    <li class="menu__item"><a href="/course-selector.html" class="menu__link@@if(typeof active !== 'undefinded' && active === 2){ active}">Course Selector</a></li>
+                    <li class="menu__item"><a href="/courses.html" class="menu__link@@if(typeof active !== 'undefinded' && active === 3){ active}">Courses</a></li>
+                    <li class="menu__item"><a href="/pricing.html" class="menu__link@@if(typeof active !== 'undefinded' && active === 4){ active}">Pricing</a></li>
+                    <li class="menu__item"><a href="/faq.html" class="menu__link@@if(typeof active !== 'undefinded' && active === 5){ active}">FAQ</a></li>
+                    <li class="menu__item"><a href="/contacts.html" class="menu__link@@if(typeof active !== 'undefinded' && active === 6){ active}">Contact US</a></li>
+                </ul>
+            </nav>
+            <div class="header__actions">
+                <a href="/login.html" class="header__action btn @@if(typeof className == 'undefined'){ btn-primary-outline}@@if(typeof className !== 'undefined') { btn-white-outline}">Log In</a>
+                <a href="/sign-in.html" class="header__action btn @@if(typeof className == 'undefined'){ btn-primary}@@if(typeof className !== 'undefined') { btn-white}">Create Account</a>
+            </div>
         </div>
     </div>
 </header>
